@@ -21,11 +21,6 @@ Modern developer portfolio with dark theme, animations, and responsive design.
    - Loading states and submission handling
    - Alternative contact methods display
 
-### Components
-- Dark/light theme toggle (WIP)
-- Animated sidebar navigation
-- Responsive layout handlers
-- Reusable button and card components
 
 ## 🛠️ Tech Stack
 - **Frontend**: React, Tailwind CSS, Framer Motion
@@ -51,13 +46,5 @@ Modern developer portfolio with dark theme, animations, and responsive design.
 - [ ] Accessibility audit
 - [ ] Performance optimizations
 
-## 🏗️ Project Structure
-```bash
-src/
-├── components/  # Reusable UI components
-├── pages/       # Page components
-├── hooks/       # Custom hooks
-├── styles/      # Global styles/Tailwind config
-├── assets/      # Images/fonts
-└── utils/       # Helper functions
+
 ```
