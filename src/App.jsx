@@ -1,7 +1,7 @@
 import Sidebar from './Components/Sidebar';
 import Home from './Components/Home'
 import Contact from './Components/Contact';
-import Projects from './Projects';
+import Projects from './Components/Projects';
 
 function App() {
   return (

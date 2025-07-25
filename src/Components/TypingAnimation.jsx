@@ -20,7 +20,7 @@ const TypingAnimation = () => {
     }, []);
 
     return (
-        <div className="relative inline-block h-8 sm:h-10 md:h-12 w-full text-center md:text-left">
+        <div className="relative inline-block h-8 sm:h-10 md:h-12 w-full text-center lg:text-left">
             <h2 className="text-xl sm:text-2xl md:text-3xl text-blue-300 mb-4">
                 I'm a <span className="text-white" ref={el}></span>
             </h2>
