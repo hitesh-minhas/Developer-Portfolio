@@ -6,25 +6,29 @@ import {
     SiPython,
     SiReact,
     SiGithub,
+    SiFlask,
+    SiTailwindcss
 } from 'react-icons/si';
+
+import { FaCss3Alt } from "react-icons/fa";
 
 const ProjectCard = () => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <div className="w-[300px] min-h-80 m-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-blue-900/20 hover:scale-[1.03] transition-transform duration-300 p-4 border-2 border-white">
-            {/* Image with Live Demo Button */}
+        <div className="w-[300px] min-h-80 m-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-blue-900/20 hover:scale-[1.03] transition-transform duration-300 p-4">
+            {/* Image with GitHub Button */}
             <div className="relative w-full h-40 overflow-hidden group ">
                 <img
                     src="https://imgs.search.brave.com/lARQypRZ5RZ7qj2k20dFowdjV-NYTf0BEl2RM2leyLY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9rbm93/bGVkZ2UuaHVic3Bv/dC5jb20vaHViZnMv/YmVzdC1odG1sNS1h/ZG1pbi1kYXNoYm9h/cmQtdGVtcGxhdGVz/LTQtMjAyNDA4MjMt/NzI3NDkyNC53ZWJw"
                     alt="AI Plant Detection System"
-                    className="object-cover w-full h-full group-hover:opacity-80 transition-opacity"
+                    className="object-cover w-full h-full group-hover:opacity-80 transition-opacity border border-gray-600"
                 />
                 <a
                     href="#live-demo-url"
-                    className="absolute top-2 right-2 bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded-md text-xs font-medium"
+                    className="absolute top-2 right-2 bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded-md text-xs font-medium flex gap-1 items-center justify-around"
                 >
-                    Live Demo
+                    <SiGithub /> Code
                 </a>
             </div>
 
@@ -55,19 +59,18 @@ const ProjectCard = () => {
             </button>
 
             {isExpanded && (
-                <div className="mt-3 pt-3 border-t border-gray-700">
-                    <ul className="text-xs text-gray-300 list-disc pl-5 space-y-1">
-                        <li>Image classification using TensorFlow</li>
-                        <li>Responsive mobile-first UI</li>
-                        <li>Deployed on Vercel</li>
-                    </ul>
-                    <div className="flex gap-3 mt-3">
-                        <a
-                            href="#github-url"
-                            className="flex items-center gap-1 text-sm text-gray-400 hover:text-white"
-                        >
-                            <SiGithub /> Code
-                        </a>
+                <div className="mt-3  border-t border-gray-700">
+                    <div className='w-full text-xs text-gray-300'>
+                        <h3 className='text-sm text-blue-300'>Role</h3>
+                        <p className='text-justify p-1'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio beatae, reiciendis quae ut perspiciatis pariatur corrupti fugit ad ex autem expedita reprehenderit, voluptas nostrum eos incidunt fuga, inventore soluta eius!</p>
+                    </div>
+                    <div className='w-full text-xs text-gray-300'>
+                        <h3 className='text-sm text-blue-300'>Features</h3>
+                        <ul className="text-xs text-gray-300 list-disc pl-5 space-y-1">
+                            <li>Image classification using TensorFlow</li>
+                            <li>Responsive mobile-first UI</li>
+                            <li>Deployed on Vercel</li>
+                        </ul>
                     </div>
                 </div>
             )}

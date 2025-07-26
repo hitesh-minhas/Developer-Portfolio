@@ -1,13 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProjectCard from './ProjectCard'
 import PagesHeading from './PagesHeading'
+import useProjects from '../Hooks/useProjects';
 
 const Projects = () => {
+
+  //Id to recognise which project is expanded
+  const [expandedCardId, setExpandedCardId] = useState(null);
+
+  //Getting projects from UseProjects custom hook
+  const projects = useProjects()
+  console.log(projects)
+
+  const handleCardExpand = (id) => {
+    setExpandedCardId(expandedCardId === id ? null : id);
+  };
+
   return (
     <>
-      <div className="ProjectsContainer border-2 bg-gradient-to-br from-gray-900 to-blue-900 min-h-screen text-white w-full ">
+      <div className="border-2 bg-gradient-to-br from-gray-900 to-blue-900 min-h-screen text-white w-full ">
         <PagesHeading title={"See What I've Built"} description={`Each project is a story of problems solved and lessons learned`} />
-        <ProjectCard />
+        {/* Project Grid  */}
+        <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-items-center '>
+          <ProjectCard />
+        </div>
+
       </div>
     </>
   )
