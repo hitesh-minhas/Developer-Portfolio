@@ -49,3 +49,5 @@ Thumbs.db
 # Optional
 .eslintcache
 .prettierignore
+
+/src/assets/Project_Cover_Images/
