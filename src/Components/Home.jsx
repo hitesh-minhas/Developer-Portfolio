@@ -8,7 +8,7 @@ const Home = () => {
         <div className='bg-gradient-to-br from-gray-900 to-blue-900 min-h-screen text-white w-full flex flex-col lg:flex-row'>
             <FloatingIconsBackground />
             {/* Profile Image Section - Full width on mobile, then fixed on larger screens */}
-            <div className="w-full lg:w-1/3 flex justify-center items-center pt-12 lg:pt-0">
+            <div className="w-full lg:w-1/3 flex justify-center items-center pt-12 lg:pt-0 lg:pl-5">
                 <div className="relative group">
                     <img
                         src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"

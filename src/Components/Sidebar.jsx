@@ -31,7 +31,7 @@ const Sidebar = () => {
   const menuItems = [
     { icon: <FaHome size={17} />, label: 'Home' },
     { icon: <FaBox size={iconSize} />, label: 'Projects' },
-    { icon: <FaFileAlt size={iconSize} />, label: 'Resume' },
+    // { icon: <FaFileAlt size={iconSize} />, label: 'Resume' },
     { icon: <FaCommentAlt size={iconSize} />, label: 'Contact' },
     { icon: <FaCalendarAlt size={iconSize} />, label: 'Education' },
     { icon: <FaTable size={iconSize} />, label: 'Skills' },
