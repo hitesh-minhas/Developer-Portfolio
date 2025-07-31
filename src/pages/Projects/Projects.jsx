@@ -1,6 +1,6 @@
-import ProjectCard from "./ProjectCard";
-import PagesHeading from "./PagesHeading";
-import useProjects from "../Hooks/useProjects";
+import ProjectCard from "./components/ProjectCard";
+import PagesHeading from "../../Components/PagesHeading";
+import useProjects from "../../Hooks/useProjects";
 
 const Projects = () => {
   //Getting projects from UseProjects custom hook

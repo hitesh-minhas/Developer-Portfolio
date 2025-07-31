@@ -1,6 +1,6 @@
-import ContactForm from "./ContactForm";
-import PagesHeading from "./PagesHeading";
-import SocialsContact from "./SocialsContact";
+import ContactForm from "./components/ContactForm";
+import PagesHeading from "../../Components/PagesHeading";
+import SocialsContact from "./components/SocialsContact";
 
 const Contact = () => {
 

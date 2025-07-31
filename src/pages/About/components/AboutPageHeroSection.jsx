@@ -7,7 +7,7 @@ import {
 
 import { Link } from 'react-router';
 
-import Divider from './Divider';
+import Divider from '../../../Components/Divider';
 
 const AboutPageHeroSection = () => {
     return (

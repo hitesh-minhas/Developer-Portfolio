@@ -1,8 +1,8 @@
 import { FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa';
-import TypingAnimation from './TypingAnimation';
-import FloatingIconsBackground from './FloatingIconsBackground';
+import TypingAnimation from '../../Components/TypingAnimation';
+import FloatingIconsBackground from '../../Components/FloatingIconsBackground';
 import { Link } from 'react-router';
-import resume from "../../public/documents/Resume_for_web_developer_job.pdf"
+import resume from "../../../public/documents/Resume_for_web_developer_job.pdf"
 import { saveAs } from 'file-saver';
 
 const Home = () => {

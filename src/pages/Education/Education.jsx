@@ -1,6 +1,6 @@
-import useEducation from '../Hooks/useEducation';
-import EducationCard from './EducationCard';
-import PagesHeading from './PagesHeading'
+import useEducation from '../../Hooks/useEducation';
+import EducationCard from './components/EducationCard';
+import PagesHeading from '../../Components/PagesHeading'
 
 const Education = () => {
 
