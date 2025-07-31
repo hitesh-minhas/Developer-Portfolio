@@ -7,7 +7,7 @@ const Education = () => {
     const educationData = useEducation()
     return (
 
-        <div className="bg-gradient-to-br from-gray-900 to-blue-900 min-h-screen text-white w-full ">
+        <section className="bg-gradient-to-br from-gray-900 to-blue-900 min-h-screen text-white w-full ">
             {/* Header */}
             <PagesHeading
                 title={"Learning Journey"}
@@ -31,7 +31,7 @@ const Education = () => {
                     <EducationCard key={index} education={education} index={index} />
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

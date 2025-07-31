@@ -30,7 +30,7 @@ const FloatingIconsBackground = () => {
         { Icon: SiGithub, color: 'text-gray-800', name: 'GitHub' },
     ];
 
-    // Generating random any 15 floating icons from all the icons 
+    // Generating random any 30 floating icons from all the icons 
     const floatingIcons = Array.from({ length: 30 }).map((_, i) => {
         const icon = icons[Math.floor(Math.random() * icons.length)];
         const Icon = icon.Icon;

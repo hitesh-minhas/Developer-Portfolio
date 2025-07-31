@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaHome, FaBox, FaFileAlt, FaCommentAlt, FaCalendarAlt, FaTable, FaUsers, FaTimes } from 'react-icons/fa';
 import { FaBars } from 'react-icons/fa6';
+import { NavLink } from 'react-router';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,17 +30,15 @@ const Sidebar = () => {
 
   const iconSize = 15;
   const menuItems = [
-    { icon: <FaHome size={17} />, label: 'Home' },
-    { icon: <FaBox size={iconSize} />, label: 'Projects' },
-    // { icon: <FaFileAlt size={iconSize} />, label: 'Resume' },
-    { icon: <FaCommentAlt size={iconSize} />, label: 'Contact' },
-    { icon: <FaCalendarAlt size={iconSize} />, label: 'Education' },
-    { icon: <FaTable size={iconSize} />, label: 'Skills' },
-    { icon: <FaUsers size={iconSize} />, label: 'About' },
+    { icon: <FaHome size={17} />, label: 'Home', link: '/' },
+    { icon: <FaBox size={iconSize} />, label: 'Projects', link: '/projects' },
+    { icon: <FaCommentAlt size={iconSize} />, label: 'Contact', link: '/contact' },
+    { icon: <FaCalendarAlt size={iconSize} />, label: 'Education', link: '/education' },
+    { icon: <FaUsers size={iconSize} />, label: 'About', link: '/about' },
   ];
 
   return (
-    <div className="font-poppins antialiased">
+    <aside className="font-poppins antialiased">
       {/* Mobile toggle button - shows hamburger or close icon */}
       {isMobile && (
         <button
@@ -92,17 +91,19 @@ const Sidebar = () => {
           {/* Menu Items */}
           <div className="flex flex-col space-y-2">
             {menuItems.map((item, index) => (
-              <a
+              <NavLink
                 key={index}
-                href="#"
-                className={`text-sm font-medium text-gray-300 py-2 px-2 hover:bg-blue-900 hover:text-white rounded-md transition flex justify-between items-center ${isMobile && !isOpen ? 'justify-center' : ''
-                  }`}
-              >
+                to={item.link}
+                className={({ isActive }) => `text-sm font-medium py-2 px-2 hover:bg-blue-900 hover:text-white rounded-md transition flex justify-between items-center 
+                ${isMobile && !isOpen ? 'justify-center' : ''}
+                ${isActive ? 'bg-blue-900 text-white' : 'text-gray-300'}
+              `}>
                 <span className={isMobile && !isOpen ? 'hidden' : 'block'}>
                   {item.label}
                 </span>
                 <span className="ml-3 text-blue-300">{item.icon}</span>
-              </a>
+              </NavLink>
+
             ))}
           </div>
         </div>
@@ -115,7 +116,7 @@ const Sidebar = () => {
           onClick={toggleSidebar}
         />
       )}
-    </div>
+    </aside>
   );
 };
 

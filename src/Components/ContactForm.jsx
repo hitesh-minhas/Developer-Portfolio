@@ -25,7 +25,7 @@ const ContactForm = () => {
 
     return (
         <>
-            <div className="flex items-center justify-center p-6 md:p-12 w-full">
+            <section className="flex items-center justify-center p-6 md:p-12 w-full">
                 <div className="mx-auto w-full max-w-[550px] ">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         {/* Name Field */}
@@ -114,7 +114,7 @@ const ContactForm = () => {
                         </div>
                     </form>
                 </div>
-            </div>
+            </section>
         </>
     )
 }

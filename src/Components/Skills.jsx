@@ -9,6 +9,8 @@ import {
     SiExpress,
     SiMysql,
     SiNextdotjs,
+    SiTailwindcss,
+    SiBootstrap
 } from 'react-icons/si';
 
 import { FaCertificate } from 'react-icons/fa';
@@ -17,6 +19,8 @@ import { FaCertificate } from 'react-icons/fa';
 const coreSkills = [
     { name: 'HTML', level: 90, icon: <SiHtml5 className="text-orange-500" />, highlight: 'Semantic and accessible markup' },
     { name: 'CSS', level: 85, icon: <SiCss3 className="text-blue-500" />, highlight: 'Responsive layouts and animations' },
+    { name: 'Tailwind CSS', level: 85, icon: <SiTailwindcss className="text-cyan-400" />, highlight: 'Utility-first CSS framework' },
+    { name: 'Bootstrap', level: 80, icon: <SiBootstrap className="text-purple-500" />, highlight: 'Responsive grid system' },
     { name: 'JavaScript', level: 90, icon: <SiJavascript className="text-yellow-300" />, highlight: 'Strong grasp of ES6+' },
     { name: 'React', level: 85, icon: <SiReact className="text-blue-400" />, highlight: 'Reusable components, state management' },
     { name: 'Git', level: 80, icon: <SiGit className="text-red-500" />, highlight: 'Version control with branching' },

@@ -5,13 +5,15 @@ import {
     FaLanguage,
 } from 'react-icons/fa';
 
+import { Link } from 'react-router';
+
 import Divider from './Divider';
 
 const AboutPageHeroSection = () => {
     return (
         <>
             {/* Hero Container */}
-            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8  lg:mt-4">
+            <section className="flex flex-col lg:flex-row items-center lg:items-start gap-8  lg:mt-4">
 
                 {/* Image  */}
                 <div className="w-full lg:w-1/3 flex justify-center">
@@ -69,11 +71,11 @@ const AboutPageHeroSection = () => {
 
                     {/* CTA*/}
                     <div className="flex flex-wrap gap-3 pt-3  justify-center lg:justify-normal">
-                        <a href="#projects" className="px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition">View Projects</a>
-                        <a href="#contact" className="px-5 py-2 border border-gray-500 hover:border-blue-400 rounded-lg transition">Contact Me</a>
+                        <Link to="/projects" className="px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition">View Projects</Link>
+                        <Link to="/contact" className="px-5 py-2 border border-gray-500 hover:border-blue-400 rounded-lg transition">Contact Me</Link>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     )
 }

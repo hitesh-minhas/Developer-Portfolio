@@ -51,3 +51,6 @@ Thumbs.db
 .prettierignore
 
 /src/assets/Project_Cover_Images/
+
+# Ignore PDFs in documents folder
+public/documents/*.pdf

@@ -1,11 +1,33 @@
 import { FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa';
-import { SiJavascript, SiReact, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb } from 'react-icons/si';
 import TypingAnimation from './TypingAnimation';
 import FloatingIconsBackground from './FloatingIconsBackground';
+import { Link } from 'react-router';
+import resume from "../../public/documents/Resume_for_web_developer_job.pdf"
+import { saveAs } from 'file-saver';
 
 const Home = () => {
+
+    const handleDownload = async () => {
+        // Not using simple <a> tag to give file for download because:
+        // 1. Provide loading state feedback
+        // 2. Ensure consistent behavior across all browsers
+        // 3. If somehow download fails openning file directly in browsre
+        try {
+            //getting file 
+            const response = await fetch(resume);
+            //Converting it to a blob (binary large object) which is raw file data in js 
+            const blob = await response.blob();
+            //saveAs expects a blob and triggers to download file with given name as second parameter
+            saveAs(blob, 'Hitesh_Kumar_Frontend_Developer_Resume.pdf');
+        } catch (error) {
+            console.error('Download failed:', error);
+            // If somehow download fails openning file directly in browsre
+            window.open(resume, '_blank');
+        }
+    };
+
     return (
-        <div className='bg-gradient-to-br from-gray-900 to-blue-900 min-h-screen text-white w-full flex flex-col lg:flex-row'>
+        <section className='bg-gradient-to-br from-gray-900 to-blue-900 min-h-screen text-white w-full flex flex-col lg:flex-row'>
             <FloatingIconsBackground />
             {/* Profile Image Section - Full width on mobile, then fixed on larger screens */}
             <div className="w-full lg:w-1/3 flex justify-center items-center pt-12 lg:pt-0 lg:pl-5">
@@ -32,27 +54,27 @@ const Home = () => {
                         Specializing in React, Node.js, Express.js and responsive design.
                     </p>
 
-                    {/* Call-to-Action Buttons */}
+                    {/*CTA Buttons for Resume and Projects */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a
-                            href="#contact"
+                        <button
+                            onClick={handleDownload}
                             className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95"
                         >
                             <FaFileDownload /> Download Resume
-                        </a>
+                        </button>
 
-                        <a
-                            href="#projects"
+                        <Link
+                            to="/projects"
                             className="px-6 py-3 border border-blue-400 hover:border-blue-300 text-blue-300 hover:text-white rounded-lg transition-all duration-300 hover:bg-blue-900/30 hover:scale-105 active:scale-95 flex items-center justify-center"
                         >
                             View My Work
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Social Links */}
                     <div className="flex gap-4 mt-8 justify-center lg:justify-start">
                         <a
-                            href="https://github.com/hitesh-minhas24"
+                            href="https://github.com/hitesh-minhas"
                             target='_blank'
                             rel="noopener noreferrer"
                             className="text-gray-300 hover:text-white transition-colors duration-300"
@@ -60,7 +82,7 @@ const Home = () => {
                             <FaGithub className="text-2xl" />
                         </a>
                         <a
-                            href="https://linkedin.com/in/yourusername"
+                            href="https://linkedin.com/in/hitesh-kumar-248540270"
                             target='_blank'
                             rel="noopener noreferrer"
                             className="text-gray-300 hover:text-white transition-colors duration-300"
@@ -70,7 +92,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -4,7 +4,7 @@ import { CiGlobe } from "react-icons/ci";
 const SocialsContact = () => {
     return (
         <>
-            <div className="flex flex-col justify-center p-6 md:p-12 w-full">
+            <section className="flex flex-col justify-center p-6 md:p-12 w-full">
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-8 lg:p-10 h-full mx-auto w-full max-w-[550px]">
                     <h2 className="text-xl md:text-3xl font-bold mb-6 text-blue-300">Other Ways to Reach Me</h2>
 
@@ -28,10 +28,10 @@ const SocialsContact = () => {
                             <div>
                                 <h3 className="font-medium text-lg">Social Media</h3>
                                 <div className="flex gap-4 mt-2">
-                                    <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                                    <a href="https://github.com/hitesh-minhas" target="_blank" className="text-gray-300 hover:text-white transition-colors">
                                         <FaGithub className="w-6 h-6" />
                                     </a>
-                                    <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                                    <a href="https://linkedin.com/in/hitesh-kumar-248540270" className="text-gray-300 hover:text-white transition-colors">
                                         <FaLinkedin className="w-6 h-6" />
                                     </a>
                                     <a href="#" className="text-gray-300 hover:text-white transition-colors">
@@ -42,7 +42,7 @@ const SocialsContact = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     )
 }
