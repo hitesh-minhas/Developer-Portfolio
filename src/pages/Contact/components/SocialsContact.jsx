@@ -31,7 +31,7 @@ const SocialsContact = () => {
                                     <a href="https://github.com/hitesh-minhas" target="_blank" className="text-gray-300 hover:text-white transition-colors">
                                         <FaGithub className="w-6 h-6" />
                                     </a>
-                                    <a href="https://linkedin.com/in/hitesh-kumar-248540270" className="text-gray-300 hover:text-white transition-colors">
+                                    <a href="https://linkedin.com/in/hitesh-kumar-248540270" target="_blank" className="text-gray-300 hover:text-white transition-colors">
                                         <FaLinkedin className="w-6 h-6" />
                                     </a>
                                     <a href="#" className="text-gray-300 hover:text-white transition-colors">
