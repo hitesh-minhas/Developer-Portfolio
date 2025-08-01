@@ -6,7 +6,7 @@ const ContactForm = () => {
 
     const form = useRef();
 
-    //Initialize EmailJS when component mounts
+    //Initializing EmailJS when form is mounted 
     useEffect(() => {
         emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
     }, []);
@@ -50,10 +50,20 @@ const ContactForm = () => {
                             </label>
                             <input
                                 type="text"
-                                {...register("name", { required: true, })}
+                                {...register("name",
+                                    {
+                                        required: "Name is required",
+                                        minLength: { value: 3, message: "Name must be at least 3 characters", },
+                                        maxLength: { value: 60, message: "Name must not exceed 60 characters", },
+                                        validate: (value) => value.trim().length >= 3 || "Input cannot be empty or whitespace only"
+                                        ,
+                                    })
+                                }
                                 placeholder="Full Name"
                                 name="name"
-                                className="w-full rounded-md border border-gray-700 bg-gray-800 py-3 px-6 text-base text-white placeholder-gray-500 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-900/50" />
+                                className="w-full rounded-md border border-gray-700 bg-gray-800 py-3 px-6 text-base text-white placeholder-gray-500 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-900/50"
+                            />
+                            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
                         </div>
 
                         {/* Email Field */}
@@ -65,11 +75,20 @@ const ContactForm = () => {
                             </label>
                             <input
                                 type="email"
-                                {...register("email", { required: true, })}
+                                {...register("email",
+                                    {
+                                        required: "Email is required",
+                                        pattern: {
+                                            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                                            message: "Enter a valid email"
+                                        },
+                                    })
+                                }
                                 placeholder="example@domain.com"
                                 name="email"
                                 className="w-full rounded-md border border-gray-700 bg-gray-800 py-3 px-6 text-base text-white placeholder-gray-500 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-900/50"
                             />
+                            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
                         </div>
 
                         {/* Subject Field */}
@@ -81,11 +100,19 @@ const ContactForm = () => {
                             </label>
                             <input
                                 type="text"
-                                {...register("subject", { required: true, })}
+                                {...register("subject",
+                                    {
+                                        required: "Subject is required",
+                                        minLength: { value: 5, message: "Subject must be at least 5 characters" },
+                                        maxLength: { value: 100, message: "Subject must be less than 100 characters" },
+                                        validate: (value) => value.trim().length >= 5 || "Input cannot be empty or whitespace only",
+                                    })
+                                }
                                 placeholder="Enter your subject"
                                 name="subject"
                                 className="w-full rounded-md border border-gray-700 bg-gray-800 py-3 px-6 text-base text-white placeholder-gray-500 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-900/50"
                             />
+                            {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>}
                         </div>
 
                         {/* Message Field */}
@@ -97,11 +124,19 @@ const ContactForm = () => {
                             </label>
                             <textarea
                                 rows="4"
-                                {...register("message", { required: true, })}
+                                {...register("message",
+                                    {
+                                        required: "Message is required",
+                                        minLength: { value: 10, message: "Message must be at least 10 characters", },
+                                        maxLength: { value: 1000, message: "Message must not exceed 1000 characters", },
+                                        validate: (value) => value.trim().length >= 10 || "Input cannot be empty or whitespace only",
+                                    })
+                                }
                                 placeholder="Type your message"
                                 name="message"
                                 className="w-full resize-none rounded-md border border-gray-700 bg-gray-800 py-3 px-6 text-base text-white placeholder-gray-500 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-900/50"
                             ></textarea>
+                            {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
                         </div>
 
                         {/* Submit Button */}
@@ -137,21 +172,3 @@ const ContactForm = () => {
 }
 
 export default ContactForm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
