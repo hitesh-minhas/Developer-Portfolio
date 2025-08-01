@@ -11,7 +11,7 @@ const SocialMediaIcons = () => {
                 <a href="https://linkedin.com/in/hitesh-kumar-248540270" target="_blank" className="text-gray-300 hover:text-white transition-colors">
                     <FaLinkedin className="w-6 h-6" />
                 </a>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <a href="https://www.instagram.com/hitesh_minhas_24?igsh=YWp0cWFheTEzZmZ5" target="_blank" className="text-gray-300 hover:text-white transition-colors">
                     <FaInstagram className="w-6 h-6" />
                 </a>
             </div>
