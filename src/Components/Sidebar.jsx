@@ -4,6 +4,7 @@ import { FaBars } from 'react-icons/fa6';
 import { NavLink } from 'react-router';
 
 const Sidebar = () => {
+
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -38,7 +39,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="font-poppins antialiased">
+    <aside  className="font-poppins antialiased">
       {/* Mobile toggle button - shows hamburger or close icon */}
       {isMobile && (
         <button
@@ -97,7 +98,8 @@ const Sidebar = () => {
                 className={({ isActive }) => `text-sm font-medium py-2 px-2 hover:bg-blue-900 hover:text-white rounded-md transition flex justify-between items-center 
                 ${isMobile && !isOpen ? 'justify-center' : ''}
                 ${isActive ? 'bg-blue-900 text-white' : 'text-gray-300'}
-              `}>
+              `}
+                onClick={() => { isMobile && setIsOpen(!isOpen) }}>
                 <span className={isMobile && !isOpen ? 'hidden' : 'block'}>
                   {item.label}
                 </span>
