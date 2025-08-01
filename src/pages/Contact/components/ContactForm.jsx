@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
 
 const ContactForm = () => {
 
@@ -20,24 +21,42 @@ const ContactForm = () => {
 
     const onSubmit = async (data) => {
         try {
-            const result = await emailjs.sendForm(
+            await emailjs.sendForm(
                 import.meta.env.VITE_EMAILJS_SERVICE_ID,
                 import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 form.current
             );
-            console.log("Success")
+            toast.success('Email sent successfully', {
+                toastId: 'email-success',
+                position: "top-left",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
             reset();
         } catch (error) {
-            console.error('EmailJS Error:', {
-                code: error.status,
-                message: error.text,
-                fullError: error
+            toast.error(error?.text || "Something went wrong", {
+                toastId: 'email-error',
+                position: "top-left",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
             });
+
         }
     };
 
     return (
         <>
+            <ToastContainer progressClassName="bg-blue-500" />
             <section className="flex items-center justify-center p-6 md:p-12 w-full">
                 <div className="mx-auto w-full max-w-[550px] ">
                     <form ref={form} onSubmit={handleSubmit(onSubmit)}>
