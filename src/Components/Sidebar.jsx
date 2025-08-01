@@ -39,7 +39,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside  className="font-poppins antialiased">
+    <aside className="font-poppins antialiased max-h-screen sticky top-0 z-50">
       {/* Mobile toggle button - shows hamburger or close icon */}
       {isMobile && (
         <button
