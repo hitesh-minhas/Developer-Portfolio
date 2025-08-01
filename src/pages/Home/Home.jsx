@@ -34,9 +34,9 @@ const Home = () => {
             <div className="w-full lg:w-1/3 flex justify-center items-center pt-12 lg:pt-0 lg:pl-5">
                 <div className="relative group">
                     <img
-                        src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                        src="../../public/images/Face_Img.jpg"
                         alt="Profile"
-                        className="w-48 md:w-56 lg:w-64 rounded-full border-4 border-blue-400 overflow-hidden shadow-xl transition-transform duration-500 group-hover:scale-105"
+                        className="w-48 md:w-56 lg:w-64 h-48 md:h-56 lg:h-64 rounded-full border-4 border-blue-400 overflow-hidden shadow-xl transition-transform duration-500 group-hover:scale-105 object-cover"
                     />
                 </div>
             </div>

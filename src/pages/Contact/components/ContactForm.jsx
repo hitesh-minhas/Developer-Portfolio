@@ -1,6 +1,16 @@
+import { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
+
+    const form = useRef();
+
+    //Initialize EmailJS when component mounts
+    useEffect(() => {
+        emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    }, []);
+
     const {
         register,
         handleSubmit,
@@ -10,16 +20,19 @@ const ContactForm = () => {
 
     const onSubmit = async (data) => {
         try {
-            // Simulate API call delay
-            await new Promise(resolve => setTimeout(resolve, 4000));
-
-            // Here you would typically call your API
-            console.log("Form submitted:", data);
-
-            // Reset form after successful submission
+            const result = await emailjs.sendForm(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                form.current
+            );
+            console.log("Success")
             reset();
         } catch (error) {
-            console.error("Submission error:", error);
+            console.error('EmailJS Error:', {
+                code: error.status,
+                message: error.text,
+                fullError: error
+            });
         }
     };
 
@@ -27,7 +40,7 @@ const ContactForm = () => {
         <>
             <section className="flex items-center justify-center p-6 md:p-12 w-full">
                 <div className="mx-auto w-full max-w-[550px] ">
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form ref={form} onSubmit={handleSubmit(onSubmit)}>
                         {/* Name Field */}
                         <div>
                             <label
@@ -37,8 +50,9 @@ const ContactForm = () => {
                             </label>
                             <input
                                 type="text"
-                                {...register("name")}
+                                {...register("name", { required: true, })}
                                 placeholder="Full Name"
+                                name="name"
                                 className="w-full rounded-md border border-gray-700 bg-gray-800 py-3 px-6 text-base text-white placeholder-gray-500 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-900/50" />
                         </div>
 
@@ -51,10 +65,11 @@ const ContactForm = () => {
                             </label>
                             <input
                                 type="email"
-                                {...register("email")}
+                                {...register("email", { required: true, })}
                                 placeholder="example@domain.com"
+                                name="email"
                                 className="w-full rounded-md border border-gray-700 bg-gray-800 py-3 px-6 text-base text-white placeholder-gray-500 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-900/50"
-                                required />
+                            />
                         </div>
 
                         {/* Subject Field */}
@@ -66,10 +81,11 @@ const ContactForm = () => {
                             </label>
                             <input
                                 type="text"
-                                {...register("subject")}
+                                {...register("subject", { required: true, })}
                                 placeholder="Enter your subject"
+                                name="subject"
                                 className="w-full rounded-md border border-gray-700 bg-gray-800 py-3 px-6 text-base text-white placeholder-gray-500 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-900/50"
-                                required />
+                            />
                         </div>
 
                         {/* Message Field */}
@@ -81,10 +97,11 @@ const ContactForm = () => {
                             </label>
                             <textarea
                                 rows="4"
-                                {...register("message")}
+                                {...register("message", { required: true, })}
                                 placeholder="Type your message"
+                                name="message"
                                 className="w-full resize-none rounded-md border border-gray-700 bg-gray-800 py-3 px-6 text-base text-white placeholder-gray-500 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-900/50"
-                                required></textarea>
+                            ></textarea>
                         </div>
 
                         {/* Submit Button */}
