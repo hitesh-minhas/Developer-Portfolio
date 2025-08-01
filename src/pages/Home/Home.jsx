@@ -1,9 +1,10 @@
-import { FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa';
+import { FaFileDownload } from 'react-icons/fa';
 import TypingAnimation from '../../Components/TypingAnimation';
 import FloatingIconsBackground from '../../Components/FloatingIconsBackground';
 import { Link } from 'react-router';
 import resume from "../../../public/documents/Resume_for_web_developer_job.pdf"
 import { saveAs } from 'file-saver';
+import SocialMediaIcons from '../../Components/SocialMediaIcons';
 
 const Home = () => {
 
@@ -72,24 +73,7 @@ const Home = () => {
                     </div>
 
                     {/* Social Links */}
-                    <div className="flex gap-4 mt-8 justify-center lg:justify-start">
-                        <a
-                            href="https://github.com/hitesh-minhas"
-                            target='_blank'
-                            rel="noopener noreferrer"
-                            className="text-gray-300 hover:text-white transition-colors duration-300"
-                        >
-                            <FaGithub className="text-2xl" />
-                        </a>
-                        <a
-                            href="https://linkedin.com/in/hitesh-kumar-248540270"
-                            target='_blank'
-                            rel="noopener noreferrer"
-                            className="text-gray-300 hover:text-white transition-colors duration-300"
-                        >
-                            <FaLinkedin className="text-2xl" />
-                        </a>
-                    </div>
+                    <SocialMediaIcons />
                 </div>
             </div>
         </section>
