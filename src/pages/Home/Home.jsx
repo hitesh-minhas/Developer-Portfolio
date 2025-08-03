@@ -14,11 +14,11 @@ const Home = () => {
     const [imageLoaded, setImageLoaded] = useState(false);
 
     useEffect(() => {
-        // Showing loading spinner for 400ms  to ensure smooth visual transition
+        // Showing loading spinner for 300ms  to ensure smooth visual transition
         // Note: In a real application, you would replace this for  actual asset loading e.g., waiting for images or API calls to complete or loading initial data from Databae
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 400);
+        }, 300);
 
         return () => clearTimeout(timer);
     }, [])

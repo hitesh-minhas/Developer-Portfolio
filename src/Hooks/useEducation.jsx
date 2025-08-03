@@ -50,7 +50,7 @@ const useEducation = () => {
         const timer = setTimeout(() => {
             setEducationData(staticEducationData)
             setLoading(false)
-        }, 400);
+        }, 300);
         return () => { clearTimeout(timer) }
     }, [])
 

@@ -128,7 +128,7 @@ const useProjects = () => {
         const timer = setTimeout(() => {
             setProjects(ProjectsData)
             setLoading(false)
-        }, 800);
+        }, 300);
         return () => { clearTimeout(timer) }
     }, [])
 
