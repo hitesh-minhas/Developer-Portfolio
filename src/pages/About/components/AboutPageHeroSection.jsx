@@ -9,7 +9,7 @@ import { Link } from 'react-router';
 
 import Divider from '../../../Components/Divider';
 
-const AboutPageHeroSection = () => {
+const AboutPageHeroSection = ({ setImageLoaded }) => {
     return (
         <>
             {/* Hero Container */}
@@ -21,8 +21,12 @@ const AboutPageHeroSection = () => {
                         src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?auto=format&fit=crop&w=880&q=80"
                         alt="Profile"
                         className="w-40 sm:w-52 lg:w-64 rounded-full border-4 border-blue-400 shadow-xl"
+                        onLoad={() => { setImageLoaded(true) }}
+                        onError={() => setImageLoaded(true)}
                     />
                 </div>
+
+
 
                 <div className="w-full lg:w-2/3 space-y-4">
                     {/* Title*/}
