@@ -1,9 +1,29 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import LoadingSpinner from "../../Components/LoadingSpinner"
 
 const NotFound = () => {
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false)
+        }, 600);
+        return () => { clearTimeout(timer) }
+    }, [])
+
     return (
         <>
             <section className="flex flex-col items-center justify-center min-h-screen p-6 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
+
+                {/* Loading overlay */}
+                {loading && (
+                    <div className="absolute inset-0 flex items-center justify-center z-10 bg-gray-900 bg-opacity-80">
+                        <LoadingSpinner />
+                    </div>
+                )}
+
+
                 <div className="text-center max-w-[600px] mx-auto">
                     {/* Error Code */}
                     <h1 className="text-9xl font-bold text-blue-400 mb-4">404</h1>
