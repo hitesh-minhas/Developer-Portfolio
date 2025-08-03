@@ -4,7 +4,7 @@ import { FaBars } from 'react-icons/fa6';
 import { NavLink } from 'react-router';
 
 const Sidebar = () => {
-
+  const [imageLoaded, setImageLoaded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -60,26 +60,29 @@ const Sidebar = () => {
           }`}
       >
         <div className="space-y-6 md:space-y-10 py-10">
-          {/* Showing title "Portfolio." on desktop and "P." on mobile */}
+          {/* Title :--> "Portfolio." on desktop and "P." on mobile */}
           {(!isMobile || isOpen) && (
-            <>
-              <h1 className="font-bold text-4xl text-center md:hidden text-blue-400">
-                P<span className="text-blue-300">.</span>
-              </h1>
-              <h1 className="hidden md:block font-bold text-xl text-center text-blue-400">
-                Portfolio<span className="text-blue-300">.</span>
-              </h1>
-            </>
+            <h1 className={`font-bold text-center text-blue-400 ${isMobile ? 'text-4xl' : 'text-xl'}`}>
+              {isMobile ? 'P.' : 'Portfolio.'}
+            </h1>
           )}
 
           {/* Profile picture- hidden when collapsed on mobile */}
           {(!isMobile || isOpen) && (
             <div className="space-y-3">
-              <img
-                src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-                alt="Profile"
-                className="w-10 md:w-16 rounded-full mx-auto border-2 border-blue-400"
-              />
+              <div className='relative w-14 h-14 md:w-16 md:h-16 rounded-full mx-auto'>
+                {!imageLoaded && (
+                  <div className="absolute inset-0 bg-gray-800 rounded-full animate-pulse" />
+                )}
+                <img
+                  src="/images/profile.webp"
+                  width={64}
+                  height={64}
+                  className={`rounded-full border-2 border-blue-400 transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                  onLoad={() => setImageLoaded(true)}
+                  onError={() => setImageLoaded(true)}
+                />
+              </div>
               <div>
                 <h2 className="font-medium text-sm text-center text-blue-300">
                   HITESH KUMAR
