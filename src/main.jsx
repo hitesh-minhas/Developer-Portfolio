@@ -8,6 +8,7 @@ import Contact from './pages/Contact/Contact';
 import Projects from './pages/Projects/Projects';
 import Education from './pages/Education/Education';
 import About from './pages/About/About';
+import NotFound from './pages/NotFound/NotFound.jsx'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/education",
         element: <Education />
+      },
+      {
+        path: "*",
+        element: <NotFound />
       }
     ]
   }
