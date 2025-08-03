@@ -56,7 +56,7 @@ const ContactForm = () => {
 
     return (
         <>
-            <ToastContainer progressClassName="bg-blue-500" />
+            <ToastContainer progressClassName="bg-blue-500" className="z-50" />
             <section className="flex items-center justify-center p-6 md:p-12 w-full">
                 <div className="mx-auto w-full max-w-[550px] ">
                     <form ref={form} onSubmit={handleSubmit(onSubmit)}>
