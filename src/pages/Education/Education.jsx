@@ -1,13 +1,24 @@
 import useEducation from '../../Hooks/useEducation';
 import EducationCard from './components/EducationCard';
 import PagesHeading from '../../Components/PagesHeading'
+import LoadingSpinner from '../../Components/LoadingSpinner';
 
 const Education = () => {
 
-    const educationData = useEducation()
+    const { educationData, loading } = useEducation()
+
+
     return (
 
         <section className="bg-gradient-to-br from-gray-900 to-blue-900 min-h-screen text-white w-full ">
+
+            {/* Loading overlay */}
+            {loading && (
+                <div className="absolute inset-0 flex items-center justify-center z-10 bg-gray-900 bg-opacity-80">
+                    <LoadingSpinner />
+                </div>
+            )}
+
             {/* Header */}
             <PagesHeading
                 title={"Learning Journey"}
