@@ -53,6 +53,7 @@ const Home = () => {
                 </div>
             )}
 
+
             {/* Profile Image Section - Full width on mobile, then fixed on larger screens */}
             <div className="w-full lg:w-1/3 flex justify-center items-center pt-12 lg:pt-0 lg:pl-5">
                 <div className="w-48 md:w-56 lg:w-64 h-48 md:h-56 lg:h-64 rounded-full relative group">
