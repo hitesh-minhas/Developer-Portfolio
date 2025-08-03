@@ -1,12 +1,28 @@
 import { FaFileDownload } from 'react-icons/fa';
 import TypingAnimation from '../../Components/TypingAnimation';
 import FloatingIconsBackground from '../../Components/FloatingIconsBackground';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import resume from "../../../public/documents/Resume_for_web_developer_job.pdf"
 import { saveAs } from 'file-saver';
 import SocialMediaIcons from '../../Components/SocialMediaIcons';
+import LoadingSpinner from '../../Components/LoadingSpinner';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
+
+    const [loading, setLoading] = useState(true)
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    useEffect(() => {
+        // Showing loading spinner for 400ms  to ensure smooth visual transition
+        // Note: In a real application, you would replace this for  actual asset loading e.g., waiting for images or API calls to complete or loading initial data from Databae
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 400);
+
+        return () => clearTimeout(timer);
+    }, [])
+
 
     const handleDownload = async () => {
         // Not using simple <a> tag to give file for download because:
@@ -30,13 +46,21 @@ const Home = () => {
     return (
         <section className='bg-gradient-to-br from-gray-900 to-blue-900 min-h-screen text-white w-full flex flex-col lg:flex-row'>
             <FloatingIconsBackground />
+            {/* Loader  */}
+            {(loading || !imageLoaded) && (
+                <div className="absolute inset-0 flex items-center justify-center z-10 bg-gray-900 bg-opacity-80">
+                    <LoadingSpinner />
+                </div>
+            )}
+
             {/* Profile Image Section - Full width on mobile, then fixed on larger screens */}
             <div className="w-full lg:w-1/3 flex justify-center items-center pt-12 lg:pt-0 lg:pl-5">
-                <div className="relative group">
+                <div className="w-48 md:w-56 lg:w-64 h-48 md:h-56 lg:h-64 rounded-full relative group">
                     <img
-                        src="../../public/images/Face_Img.jpg"
+                        src="/images/Face_Img.jpg"
                         alt="Profile"
                         className="w-48 md:w-56 lg:w-64 h-48 md:h-56 lg:h-64 rounded-full border-4 border-blue-400 overflow-hidden shadow-xl transition-transform duration-500 group-hover:scale-105 object-cover"
+                        onLoad={() => setImageLoaded(true)}
                     />
                 </div>
             </div>
