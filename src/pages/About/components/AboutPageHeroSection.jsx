@@ -8,8 +8,9 @@ import {
 import { Link } from 'react-router';
 
 import Divider from '../../../Components/Divider';
+import HeroProfileImg from '../../../Components/HeroProfileImg';
 
-const AboutPageHeroSection = ({ setImageLoaded }) => {
+const AboutPageHeroSection = ({ setImageLoaded, imageLoaded }) => {
     return (
         <>
             {/* Hero Container */}
@@ -17,13 +18,7 @@ const AboutPageHeroSection = ({ setImageLoaded }) => {
 
                 {/* Image  */}
                 <div className="w-full lg:w-1/3 flex justify-center">
-                    <img
-                        src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?auto=format&fit=crop&w=880&q=80"
-                        alt="Profile"
-                        className="w-40 sm:w-52 lg:w-64 rounded-full border-4 border-blue-400 shadow-xl"
-                        onLoad={() => { setImageLoaded(true) }}
-                        onError={() => setImageLoaded(true)}
-                    />
+                    <HeroProfileImg setImageLoaded={setImageLoaded} imageLoaded={imageLoaded} />
                 </div>
 
 

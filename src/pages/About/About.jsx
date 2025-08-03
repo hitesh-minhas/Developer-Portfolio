@@ -21,9 +21,10 @@ const About = () => {
                     <LoadingSpinner />
                 </div>
             )}
-            
+
             {/* Hero Section  */}
             <AboutPageHeroSection imageLoaded={imageLoaded} setImageLoaded={setImageLoaded} />
+
             {/* SKills Section  */}
             <Skills />
         </section>

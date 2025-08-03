@@ -7,6 +7,7 @@ import { saveAs } from 'file-saver';
 import SocialMediaIcons from '../../Components/SocialMediaIcons';
 import LoadingSpinner from '../../Components/LoadingSpinner';
 import { useEffect, useState } from 'react';
+import HeroProfileImg from '../../Components/HeroProfileImg';
 
 const Home = () => {
 
@@ -15,30 +16,25 @@ const Home = () => {
 
     useEffect(() => {
         // Showing loading spinner for 300ms  to ensure smooth visual transition
-        // Note: In a real application, you would replace this for  actual asset loading e.g., waiting for images or API calls to complete or loading initial data from Databae
+        // Note: In a real application this would be replaced for  actual asset loading like waiting for images or API calls to complete or loading initial data from Databae
         const timer = setTimeout(() => {
             setLoading(false);
         }, 300);
-
         return () => clearTimeout(timer);
     }, [])
 
-
+    // Handling resume download button. Note :--> Using this approach instead of a simple <a> tag to give file for download because we can provide loading state feedback and if somehow download fails openning file directly in browsre
     const handleDownload = async () => {
-        // Not using simple <a> tag to give file for download because:
-        // 1. Provide loading state feedback
-        // 2. Ensure consistent behavior across all browsers
-        // 3. If somehow download fails openning file directly in browsre
         try {
             //getting file 
             const response = await fetch(resume);
-            //Converting it to a blob (binary large object) which is raw file data in js 
+            //Converting it to a blob (large binary object) which is raw file data in js 
             const blob = await response.blob();
             //saveAs expects a blob and triggers to download file with given name as second parameter
             saveAs(blob, 'Hitesh_Kumar_Frontend_Developer_Resume.pdf');
         } catch (error) {
             console.error('Download failed:', error);
-            // If somehow download fails openning file directly in browsre
+            // if somehow download fails openning file directly in browsre
             window.open(resume, '_blank');
         }
     };
@@ -56,14 +52,7 @@ const Home = () => {
 
             {/* Profile Image Section - Full width on mobile, then fixed on larger screens */}
             <div className="w-full lg:w-1/3 flex justify-center items-center pt-12 lg:pt-0 lg:pl-5">
-                <div className="w-48 md:w-56 lg:w-64 h-48 md:h-56 lg:h-64 rounded-full relative group">
-                    <img
-                        src="/images/Face_Img.jpg"
-                        alt="Profile"
-                        className="w-48 md:w-56 lg:w-64 h-48 md:h-56 lg:h-64 rounded-full border-4 border-blue-400 overflow-hidden shadow-xl transition-transform duration-500 group-hover:scale-105 object-cover"
-                        onLoad={() => setImageLoaded(true)}
-                    />
-                </div>
+                <HeroProfileImg imageLoaded={imageLoaded} setImageLoaded={setImageLoaded} />
             </div>
 
             {/* Content Section */}
