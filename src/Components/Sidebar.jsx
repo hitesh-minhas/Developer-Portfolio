@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
-import { FaHome, FaBox, FaFileAlt, FaCommentAlt, FaCalendarAlt, FaTable, FaUsers, FaTimes } from 'react-icons/fa';
-import { FaBars } from 'react-icons/fa6';
+import { FaHome } from 'react-icons/fa';
+import { FaBox } from 'react-icons/fa';
+import { FaCommentAlt } from 'react-icons/fa';
+import { FaCalendarAlt } from 'react-icons/fa';
+import { FaUsers } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa'; // was using Fa6 – simplified to regular `fa`
 import { NavLink } from 'react-router';
 
 const Sidebar = () => {
@@ -43,6 +48,7 @@ const Sidebar = () => {
       {/* Mobile toggle button - shows hamburger or close icon */}
       {isMobile && (
         <button
+          aria-label={isOpen ? "Close menu" : "Open menu"}
           onClick={toggleSidebar}
           className="p-2 m-2 border-2 bg-gray-800 rounded-md border-gray-700 shadow-lg text-gray-300 hover:text-white fixed top-0 left-0 z-50 transition-colors"
         >
@@ -75,7 +81,8 @@ const Sidebar = () => {
                   <div className="absolute inset-0 bg-gray-800 rounded-full animate-pulse" />
                 )}
                 <img
-                  src="/images/profile.webp"
+                  src="/images/profile-128.webp"
+                  alt='Hitesh Kumar'
                   width={64}
                   height={64}
                   className={`rounded-full border-2 border-blue-400 transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
@@ -98,6 +105,7 @@ const Sidebar = () => {
               <NavLink
                 key={index}
                 to={item.link}
+                aria-label={item.label}
                 className={({ isActive }) => `text-sm font-medium py-2 px-2 hover:bg-blue-900 hover:text-white rounded-md transition flex justify-between items-center 
                 ${isMobile && !isOpen ? 'justify-center' : ''}
                 ${isActive ? 'bg-blue-900 text-white' : 'text-gray-300'}

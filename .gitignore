@@ -6,6 +6,8 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Runtime data
+/dist       
+/build     
 node_modules/
 dist/
 .temp/

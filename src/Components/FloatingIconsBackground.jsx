@@ -1,18 +1,15 @@
-import {
-    SiHtml5,
-    SiCss3,
-    SiJavascript,
-    SiTailwindcss,
-    SiBootstrap,
-    SiNodedotjs,
-    SiExpress,
-    SiMongodb,
-    SiPython,
-    SiReact,
-    SiGit,
-    SiGithub,
-    SiFirebase
-} from 'react-icons/si';
+import { SiHtml5 } from 'react-icons/si';
+import { SiCss3 } from 'react-icons/si';
+import { SiJavascript } from 'react-icons/si';
+import { SiTailwindcss } from 'react-icons/si';
+import { SiBootstrap } from 'react-icons/si';
+import { SiNodedotjs } from 'react-icons/si';
+import { SiExpress } from 'react-icons/si';
+import { SiMongodb } from 'react-icons/si';
+import { SiPython } from 'react-icons/si';
+import { SiReact } from 'react-icons/si';
+import { SiGit } from 'react-icons/si';
+import { SiGithub } from 'react-icons/si';
 
 const FloatingIconsBackground = () => {
     const icons = [
@@ -46,8 +43,9 @@ const FloatingIconsBackground = () => {
                     animationDelay: `${Math.random() * 15}s`,
                     animationDuration: `${15 + Math.random() * 15}s`,
                 }}
-                aria-label={icon.name}>
-                <Icon />
+            // aria-label={icon.name}
+            >
+                <Icon aria-hidden="true" focusable="false" />
             </div>
         );
     });
