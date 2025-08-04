@@ -2,7 +2,7 @@ import { FaFileDownload } from 'react-icons/fa';
 import TypingAnimation from '../../Components/TypingAnimation';
 import FloatingIconsBackground from '../../Components/FloatingIconsBackground';
 import { Link } from 'react-router-dom';
-import resume from "../../../public/documents/Resume_for_web_developer_job.pdf"
+import resume from "../../assets/documents/Resume_for_web_developer_job.pdf"
 import { saveAs } from 'file-saver';
 import SocialMediaIcons from '../../Components/SocialMediaIcons';
 import LoadingSpinner from '../../Components/LoadingSpinner';
