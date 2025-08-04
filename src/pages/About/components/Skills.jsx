@@ -58,7 +58,7 @@ const Skills = () => {
                             <div key={index} className="bg-gray-800/80 border border-gray-700 rounded-lg p-5">
                                 <div className="flex items-center gap-3 mb-2">
                                     {skill.icon}
-                                    <h4 className="text-lg font-semibold">{skill.name}</h4>
+                                    <h3 className="text-lg font-semibold">{skill.name}</h3>
                                 </div>
                                 <div className="w-full bg-gray-700 rounded-full h-2.5 mb-2">
                                     <div
