@@ -5,7 +5,7 @@ import { FaCommentAlt } from 'react-icons/fa';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { FaUsers } from 'react-icons/fa';
 import { FaTimes } from 'react-icons/fa';
-import { FaBars } from 'react-icons/fa'; // was using Fa6 – simplified to regular `fa`
+import { FaBars } from 'react-icons/fa';
 import { NavLink } from 'react-router';
 
 const Sidebar = () => {

@@ -27,10 +27,6 @@ const Projects = () => {
     }
   }, [loading, projects]);
 
-  // if (loading || !imagesLoaded) {
-  //   return <LoadingSpinner />;
-  // }
-
   return (
     <>
       <section className="bg-gradient-to-br from-gray-900 to-blue-900 min-h-screen text-white w-full ">

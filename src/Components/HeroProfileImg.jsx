@@ -42,23 +42,3 @@ const HeroProfileImg = ({ imageLoaded, setImageLoaded }) => {
 
 export default HeroProfileImg
 
-
-
-
-
-
-
-
-
-{/* Optimized Image */ }
-{/* <img
-                src="/images/profile.webp"
-                width={256}
-                height={256}
-                className={`rounded-full border-4 border-blue-400 overflow-hidden shadow-xl transition-all duration-500 group-hover:scale-105 object-cover w-full h-full ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-                loading="eager"
-                fetchPriority="high"
-                alt='Hitesh Kumar - Web Developer'
-                onLoad={() => setImageLoaded(true)}
-                onError={() => setImageLoaded(true)}
-            /> */}
