@@ -11,6 +11,7 @@ import todoDemo from "../assets/Project_Cover_Images/React_ToDo.png";
 import spotifyDemo from "../assets/Project_Cover_Images/Spotify.png";
 import farmerDemo from "../assets/Project_Cover_Images/Farmer_Middle_Man.png";
 import libraryDemo from "../assets/Project_Cover_Images/CLMS.png";
+import passwordManagerDemo from "../assets/Project_Cover_Images/passwordManagerDemo.jpeg";
 
 // importing tech stack icons to show in card from react icons
 import {
@@ -22,6 +23,9 @@ import {
     SiTailwindcss,
     SiFlask,
     SiSqlite,
+    SiNodedotjs,
+    SiExpress,
+    SiMongodb,
 } from "react-icons/si";
 
 const techIcons = {
@@ -33,9 +37,30 @@ const techIcons = {
     tailwindcss: <SiTailwindcss className="text-teal-400" title="Tailwind CSS" />,
     flask: <SiFlask className="text-gray-300" title="Flask" />,
     sqlite: <SiSqlite className="text-indigo-400" title="SQLite" />,
+    node: <SiNodedotjs className="text-green-500" title="Node.js" />,
+    express: <SiExpress className="text-gray-400" title="Express.js" />,
+    mongodb: <SiMongodb className="text-green-400" title="MongoDB" />,
 };
 
 const ProjectsData = [
+    {
+        id: 0,
+        title: "Password Manager",
+        description:
+            "A password manager web app where users can add, view, and edit stored passwords through a clean interface, with upcoming updates focused on authentication, password hashing, and enhanced security.",
+        tech: [
+            techIcons.react,
+            techIcons.tailwindcss,
+            techIcons.express,
+            techIcons.mongodb,
+        ],
+        image: passwordManagerDemo,
+        github: "https://github.com/hitesh-minhas/password-manager",
+        role: "Built the frontend with React and Tailwind CSS, and the backend with Express and MongoDB. Implemented CRUD operations via REST APIs and planned security features for future releases.",
+    }
+
+
+    ,
     {
         id: 1,
         title: "AI Plant Detection",
