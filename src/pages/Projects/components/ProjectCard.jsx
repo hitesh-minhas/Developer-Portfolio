@@ -8,7 +8,8 @@ const ProjectCard = ({ project }) => {
                 <img
                     src={project.image}
                     alt={project.title}
-                    className="object-cover w-full h-full group-hover:opacity-90 transition-opacity duration-300 border border-gray-600/50"
+                    className="object-contain w-full h-full group-hover:opacity-90 transition-opacity duration-300 border border-gray-600/50 bg-gray-850 "
+                // cover nu contain kita wa te bg-gray-700 add kita wa 
                 />
                 <a
                     href={project.github}

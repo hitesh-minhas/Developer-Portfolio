@@ -11,7 +11,7 @@ import todoDemo from "../assets/Project_Cover_Images/React_ToDo.png";
 import spotifyDemo from "../assets/Project_Cover_Images/Spotify.png";
 import farmerDemo from "../assets/Project_Cover_Images/Farmer_Middle_Man.png";
 import libraryDemo from "../assets/Project_Cover_Images/CLMS.png";
-import passwordManagerDemo from "../assets/Project_Cover_Images/passwordManagerDemo.jpeg";
+import passwordManagerDemo from "../assets/Project_Cover_Images/passwordManagerDemo.png";
 
 // importing tech stack icons to show in card from react icons
 import {
