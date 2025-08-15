@@ -5,13 +5,13 @@
 import { useState, useEffect } from 'react';
 
 // importing project images
-import plantDemo from "../assets/Project_Cover_Images/Plant_Detection.png";
-import personCounterDemo from "../assets/Project_Cover_Images/AI_Person_Detector.jpeg";
-import todoDemo from "../assets/Project_Cover_Images/React_ToDo.png";
-import spotifyDemo from "../assets/Project_Cover_Images/Spotify.png";
-import farmerDemo from "../assets/Project_Cover_Images/Farmer_Middle_Man.png";
-import libraryDemo from "../assets/Project_Cover_Images/CLMS.png";
-import passwordManagerDemo from "../assets/Project_Cover_Images/passwordManagerDemo.png";
+import plantDemo from "../assets/Project_Cover_Images/Plant_Detection.webp";
+import personCounterDemo from "../assets/Project_Cover_Images/AI_Person_Detector.webp";
+import todoDemo from "../assets/Project_Cover_Images/React_ToDo.webp";
+import spotifyDemo from "../assets/Project_Cover_Images/Spotify.webp";
+import farmerDemo from "../assets/Project_Cover_Images/Farmer_Middle_Man.webp";
+import libraryDemo from "../assets/Project_Cover_Images/CLMS.webp";
+import passwordManagerDemo from "../assets/Project_Cover_Images/passwordManagerDemo.webp";
 
 // importing tech stack icons to show in card from react icons
 import {
