@@ -46,7 +46,6 @@ A modern, responsive, and animated developer portfolio built with **React** and 
 ## 🛠️ Tech Stack
 
 - **Frontend:** React, Tailwind CSS
-- **Animations:** Framer Motion
 - **Icons:** React Icons
 - **Form Handling:** React Hook Form
 - **Email Service:** EmailJS
@@ -103,7 +102,6 @@ A modern, responsive, and animated developer portfolio built with **React** and 
 ## 🔜 Future Improvements
 
 - Theme switcher (Dark/Light)
-- PDF resume generator
 - Additional accessibility enhancements
 - More interactive animations
 
