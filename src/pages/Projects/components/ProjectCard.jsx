@@ -33,9 +33,9 @@ const ProjectCard = ({ project }) => {
 
                 {/* Tech Stack */}
                 <div className="mt-3">
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-blue-300 mb-2">
+                    <h2 className="text-xs font-semibold uppercase tracking-wider text-blue-300 mb-2">
                         Technologies Used
-                    </h3>
+                    </h2>
                     <div className="flex flex-wrap gap-2">
                         {project.tech.map((tech, index) => (
                             <span
@@ -50,9 +50,9 @@ const ProjectCard = ({ project }) => {
 
                 {/* Role */}
                 <div className="mt-3">
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-blue-300 mb-1.5">
+                    <h2 className="text-xs font-semibold uppercase tracking-wider text-blue-300 mb-1.5">
                         My Contribution
-                    </h3>
+                    </h2>
                     <p className="text-sm text-gray-300 leading-relaxed">
                         {project.role}
                     </p>
