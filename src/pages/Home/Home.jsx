@@ -2,7 +2,7 @@ import { FaFileDownload } from 'react-icons/fa';
 import TypingAnimation from '../../Components/TypingAnimation';
 import FloatingIconsBackground from '../../Components/FloatingIconsBackground';
 import { Link } from 'react-router-dom';
-import resume from "../../assets/documents/Resume_for_web_developer_job.pdf"
+import resume from "../../assets/documents/Hitesh_Kumar_web_developer_Resume.pdf"
 import { saveAs } from 'file-saver';
 import SocialMediaIcons from '../../Components/SocialMediaIcons';
 import LoadingSpinner from '../../Components/LoadingSpinner';
@@ -31,7 +31,7 @@ const Home = () => {
             //Converting it to a blob (large binary object) which is raw file data in js 
             const blob = await response.blob();
             //saveAs expects a blob and triggers to download file with given name as second parameter
-            saveAs(blob, 'Hitesh_Kumar_Frontend_Developer_Resume.pdf');
+            saveAs(blob, 'Hitesh_Kumar_Web_Developer_Resume.pdf');
         } catch (error) {
             console.error('Download failed:', error);
             // if somehow download fails openning file directly in browsre

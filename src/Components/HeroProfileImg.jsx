@@ -8,23 +8,24 @@ const HeroProfileImg = ({ imageLoaded, setImageLoaded }) => {
                 <div className="absolute inset-0 bg-gray-800 rounded-full animate-pulse" />
             )}
             <picture>
+                {/* sources main jo alag laga dimesions ke liye alag alag size ki images ke path dene hai wo kaam abhi pending hai. Ek image final krke uski quality enhance krke alag alag dimesions ki copies banake uske path sources main dene hai  */}
                 <source
-                    srcSet="/images/profile-128.webp"
+                    srcSet="/images/Profile_Image256.webp"
                     media="(max-width: 480px)"
                     type="image/webp"
                 />
                 <source
-                    srcSet="/images/profile-256.webp"
+                    srcSet="/images/Profile_Image256.jpg"
                     media="(max-width: 768px)"
                     type="image/webp"
                 />
                 <source
-                    srcSet="/images/profile-512.webp"
+                    srcSet="/images/Profile_Image512.webp"
                     media="(max-width: 1024px)"
                     type="image/webp"
                 />
                 <img
-                    src="/images/profile-512.webp"
+                    src="/images/Profile_Image512.webp"
                     width={256}
                     height={256}
                     className={`rounded-full border-4 border-blue-400 overflow-hidden shadow-xl transition-all duration-500 group-hover:scale-105 object-cover w-full h-full ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}

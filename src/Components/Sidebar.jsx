@@ -81,7 +81,8 @@ const Sidebar = () => {
                   <div className="absolute inset-0 bg-gray-800 rounded-full animate-pulse" />
                 )}
                 <img
-                  src="/images/profile-128.webp"
+                  // Image final krke image di quality final krke ohdi dimensions 128px di krke sidebar ch lagani aa 
+                  src="/images/Profile_Image256.webp"
                   alt='Hitesh Kumar'
                   width={64}
                   height={64}
