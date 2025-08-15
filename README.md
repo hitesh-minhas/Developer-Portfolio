@@ -10,6 +10,12 @@ A modern, responsive, and animated developer portfolio built with **React** and 
 
 ---
 
+## 🚀 Live Demo
+
+**[Visit Portfolio](https://developer-portfolio-lovat-gamma.vercel.app/)**
+
+---
+
 ## ✨ Features
 
 ### Developed Pages / Components
